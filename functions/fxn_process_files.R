@@ -10,7 +10,6 @@ get_EXAMPLE_data_from_google_drive <- case_when(
 
 fxn_pacman_processing()
 
-fxn_process_files<-function(){
 
 # PROCESS FILES--------------------------
 #*** Do NOT modify this section*** unless you are very sure you understand what you want
@@ -68,4 +67,3 @@ rm(list = ls()) # clean environment
 print('environment cleaned, processing complete')
 
 
-}
