@@ -1,7 +1,7 @@
 # SETUP-----------------------------
 #**** Modify This Section***
 
-get_EXAMPLE_herds <- 1 #(0-8)
+get_EXAMPLE_herds <- 2 #(0-8)
 #number of Parnell Example herds you want to process.
 #if this is set to 0, you need to put your own data in the event_files folder
 
@@ -45,17 +45,18 @@ fxn_pacman_all()
 # quarto::quarto_render("report_explore_lame.qmd")
 
 ## "HOW TO" reports ---------------------------
- quarto::quarto_render("report_how_to_use_denominators.qmd")
+ #quarto::quarto_render("report_how_to_use_denominators.qmd")
 
 ## quick check data reports--------------------------------
- quarto::quarto_render("report_explore_event_types.qmd")
- quarto::quarto_render("report_data_dictionary.qmd")
+ #quarto::quarto_render("report_explore_event_types.qmd")
+ #quarto::quarto_render("report_data_dictionary.qmd")
 
 
 #******************************************************************************
 #*******************************************************************************
 #CLEAN SLATE --------------
-#fxn_delete_files_clean_slate() #delete ALL original event data and  processed data
+#  source("functions/fxn_delete_files.R")
+# fxn_delete_files_clean_slate() #delete ALL original event data and  processed data
 #****************************************************************************
 #***************************************************************************
 
