@@ -139,7 +139,7 @@ if (get_EXAMPLE_data_from_google_drive == TRUE) {
 }
 
 ### Step 1 Read in data-------------
-source("step1_read_in_data.R") #creates ***events.parquet*** reads in the data, formats dates, adds lactation groups and other basic data prep steps
+source("step1_read_in_event_data.R") #creates ***events.parquet*** reads in the data, formats dates, adds lactation groups and other basic data prep steps
 
 ### Step 2 create Intermediate Files----------------------
 source("step2_create_intermediate_files.R") # fundamental files: animals.parquet, animal_lactations.parquet, events.parquet

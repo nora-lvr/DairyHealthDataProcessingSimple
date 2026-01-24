@@ -7,10 +7,14 @@ library(arrow)
 
 
 #read in functions -------------------
-source('functions/fxn_parse_free_text.R') #functions to parse remarks and protocols
-source('functions/fxn_event_type.R') #custom function to categorize events
-source('functions/fxn_location.R') #custom function to specify event location
 source('functions/fxn_de_duplicate.R') #removes duplicated rows
+
+source("functions/fxn_location.R") # function to specify event location
+source("functions/fxn_assign_id_animal.R") # parameters to use in animal id
+
+source("functions/fxn_parse_free_text.R") # functions to parse remarks and protocols
+source("functions/fxn_event_type.R") # c function to categorize events
+
 
 
 #read in files-----------------
@@ -39,6 +43,11 @@ for (i in seq_along(list_files)){
 
 
 #add a stop function here if all expected columns do not exist
+
+#deal with example data
+fxn_assign_id_animal<-case_when(
+  (get_EXAMPLE_data_from_google_drive == TRUE) ~ fxn_assign_id_animal_parnell, 
+  TRUE~fxn_assign_id_animal_default)
 
 
 #initial cleanup ---------------------------
