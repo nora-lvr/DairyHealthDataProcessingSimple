@@ -133,7 +133,8 @@ events <- events|>
 #events3 <-events2|>
   #fix na values-------------
 mutate(technician = Technician, 
-       eid = EID)|> 
+       eid = EID, 
+       pen_event = PEN)|> 
   
   mutate(across(
     .cols = c(event_type, breed, location_event, locate_lesion, technician, eid), 
@@ -192,14 +193,14 @@ write_parquet(events%>%
                 select(
                        herdid, id_animal, id,  date_birth, breed,
                        
-                       id_animal_lact,  animal_lact_status,
+                       id_animal_lact,  animal_lact_status, 
                        RC, lact_number, lact_group_basic, lact_group, lact_group_repro, lact_group_5,
                        
                        event_type, event, remark, contains('remark'), protocols, contains('protocols'), 
                        
                        technician, date_event, dim_event, dop_event, age_event, 
                        
-                       location_event, locate_lesion, 
+                       pen_event, location_event, locate_lesion, 
                        
                        R, `T`, B, date_heat, date_concieved, date_aborted, date_repro_dx,
                        
