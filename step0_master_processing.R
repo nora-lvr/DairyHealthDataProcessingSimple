@@ -45,11 +45,11 @@ fxn_pacman_all()
 # quarto::quarto_render("report_explore_lame.qmd")
 
 ## "HOW TO" reports ---------------------------
- #quarto::quarto_render("report_how_to_use_denominators.qmd")
+ quarto::quarto_render("report_how_to_use_denominators.qmd")
 
 ## quick check data reports--------------------------------
- #quarto::quarto_render("report_explore_event_types.qmd")
- #quarto::quarto_render("report_data_dictionary.qmd")
+ quarto::quarto_render("report_explore_event_types.qmd")
+ quarto::quarto_render("report_data_dictionary.qmd")
 
 
 #******************************************************************************
