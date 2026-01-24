@@ -1,5 +1,11 @@
 library(tidyverse)
 
+source('functions/fxn_pacman.R')
+source("functions/fxn_delete_files_clean_slate.R")
+
+get_EXAMPLE_data_from_google_drive <- case_when(
+  (get_EXAMPLE_herds>0)~TRUE, 
+  TRUE~FALSE)
 
 
 fxn_pacman_processing()

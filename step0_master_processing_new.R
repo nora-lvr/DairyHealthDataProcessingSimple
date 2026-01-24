@@ -1,7 +1,10 @@
 # SETUP-----------------------------
 #**** Modify This Section***
 
-get_EXAMPLE_data_from_google_drive <- TRUE # set this to TRUE to pull EXAMPLE data from google drive.
+get_EXAMPLE_herds <- 1 #(0-8)
+#number of Parnell Example herds you want to process.
+#if this is set to 0, you need to put your own data in the event_files folder
+
 milk_data_exists <- FALSE #are there files in the milk_files folder that you want to process?
 auto_de_duplicate <- TRUE #do you want to de-duplicate rows in the event files? 
 #(choose FALSE if there are treatments that happen more than once daily that you want to capture)
@@ -22,9 +25,10 @@ denominator_time_periods<-c(21, 365) #do NOT delete the yearly option or you wil
 # PROCESS FILES--------------------------
 ## read in functions -------------------
 source('functions/fxn_pacman.R')
-source("functions/fxn_delete_files_clean_slate.R")
+source("functions/fxn_delete_files.R")
 source('functions/fxn_process_files.R')
 ## process files ----------
+
 fxn_process_files()
 
 

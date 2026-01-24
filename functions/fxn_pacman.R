@@ -28,6 +28,7 @@ pacman::p_load(
 
 
 fxn_pacman_processing<-function(){
+  
 # loads packages for set up ------------
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
@@ -40,6 +41,6 @@ pacman::p_load(
   rmarkdown,
   scales,
   stringr,
-  tidyverse,
+  tidyverse
   )
 }
