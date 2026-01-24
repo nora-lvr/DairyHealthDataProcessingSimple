@@ -20,7 +20,8 @@ set_top_cut_hfr = 700 #the final group for heifer days of age with be this numbe
 #The standard options are 21 and 365.  However any number works.
 #You can add or delete as you wish, except for yearly. Yearly needs to stay
 #the more time periods you add to this list the longer it will take to process files
-denominator_time_periods<-c(21, 365) #do NOT delete the yearly option or you will break the data_dictionary
+denominator_time_periods<-c(#21, 
+                            365) #do NOT delete the yearly option or you will break the data_dictionary
 
 
 # PROCESS FILES--------------------------
@@ -33,17 +34,22 @@ source('functions/fxn_process_files.R')
 
 
 
-# # Step 4 Report Templates-----------------------
 
-# # ## quick check data reports--------------------------------
-#  quarto::quarto_render("report_explore_event_types.qmd")
-#  quarto::quarto_render("report_data_dictionary.qmd")
-# # 
-# # ## Gerard's lameness report ---------------------------
+
+# REPORTS ----------------
+source('functions/fxn_pacman.R')
+fxn_pacman_all()
+
+## Gerard's lameness report ---------------------------
+# quarto::quarto_render("step3_create_denominators_lact_dim_season.qmd") # denominators for lameness report
 # quarto::quarto_render("report_explore_lame.qmd")
-# 
-# ## HOW TO reports ---------------------------
-# quarto::quarto_render("report_how_to_use_denominators.qmd")
+
+## "HOW TO" reports ---------------------------
+ quarto::quarto_render("report_how_to_use_denominators.qmd")
+
+## quick check data reports--------------------------------
+ quarto::quarto_render("report_explore_event_types.qmd")
+ quarto::quarto_render("report_data_dictionary.qmd")
 
 
 #******************************************************************************
