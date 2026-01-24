@@ -45,17 +45,32 @@ for (i in seq_along(list_files)){
 #add a stop function here if all expected columns do not exist
 
 #deal with example data
-fxn_assign_id_animal<-case_when(
-  (get_EXAMPLE_data_from_google_drive == TRUE) ~ fxn_assign_id_animal_parnell, 
-  TRUE~fxn_assign_id_animal_default)
+#add source farm variable
+if ("SourceFarm" %in% names(events)) {
+  
+} else {
+  events$SourceFarm = "No SourceFarm Info"
+}
+
+#add herd id to example data
+if ("HERDID" %in% names(events)) {
+  
+} else {
+  if (get_EXAMPLE_herds == TRUE){
+    events$HERDID = str_sub(events$source_file_path, 18, 47)
+  }else{
+  events$SourceFarm = "No SourceFarm Info"
+  }
+}
+
 
 
 #initial cleanup ---------------------------
 events2 <- events|>
-  lazy_dt() |> 
+  #lazy_dt() |> 
   select(-starts_with('...')) |> #get rid of extra columns created by odd parsing in the original csv file, there is a better fix to the parsing issue, someday we should improve this
   ##create unique cow id--------------------------------------- 
-  fxn_assign_id_animal()%>%
+   fxn_assign_id_animal()
   ## name the breed variable--------------------
   mutate(breed = CBRD)|>
   ##format dates--------------------------------------- 

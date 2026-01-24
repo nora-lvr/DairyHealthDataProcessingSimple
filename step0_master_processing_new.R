@@ -27,8 +27,8 @@ denominator_time_periods<-c(21, 365) #do NOT delete the yearly option or you wil
 source('functions/fxn_pacman.R')
 source("functions/fxn_delete_files.R")
 source('functions/fxn_process_files.R')
-## process files ----------
 
+## process files ----------
 fxn_process_files()
 
 
