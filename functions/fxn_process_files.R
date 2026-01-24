@@ -25,18 +25,22 @@ fxn_delete_processed_files() #this will delete  your previously processed data a
 if (milk_data_exists == TRUE) {
   source("step1a_read_in_production_data.R")
 }
+print('milk data processed if turned on')
 
 ## process event data -----------------
 if (get_EXAMPLE_data_from_google_drive == TRUE) {
   source("step00_get_example_data_from_google_drive.R")
 }
-print('begining to process')
+
+print('begining to process data')
 ### Step 1 Read in data-------------
 source("step1_read_in_event_data.R") #creates ***events.parquet*** reads in the data, formats dates, adds lactation groups and other basic data prep steps
 print('step1 complete')
+
 ### Step 2 create Intermediate Files----------------------
 source("step2_create_intermediate_files.R") # fundamental files: animals.parquet, animal_lactations.parquet, events.parquet
 print('step2 complete')
+
 ### Step 3 Create Denominators ---------------------
 ####Create denominator files by time periods ------------------------
 for (i in seq_along(denominator_time_periods)){
@@ -50,7 +54,8 @@ for (i in seq_along(denominator_time_periods)){
     )
   )
 }
-print('calendar denominators created')
+print('time period denominators created')
+
 ####Create denominator files by CALENDAR time periods ------------------------
 quarto::quarto_render(
   input = "step3_denominators_by_calendar_time.qmd",
@@ -60,10 +65,10 @@ quarto::quarto_render(
     top_cut_hfr = set_top_cut_hfr
   )
 )
-print('time period denominators created')
+print('calendar time period denominators created')
 
 rm(list = ls()) # clean environment
 
-print('environment cleaned, processing complete')
+print('processing complete, environment cleaned')
 
 

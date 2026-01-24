@@ -5,7 +5,6 @@ library(tidyverse)
 fxn_add_location_event <- function(df){
   df%>%
     mutate(
-      #location_event = source_file_path
       location_event = HERDID
       )
 }

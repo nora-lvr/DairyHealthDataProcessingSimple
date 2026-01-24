@@ -81,7 +81,7 @@ This section displays the active animals.  This is a good place to check that th
 
 ```{r}
 active_animals<-animal_lactations%>%
-  filter(status %in% 'active')
+  filter(animal_lactation_status %in% 'active')
 
 ggplot(active_animals)+
   geom_bar(aes(x = lact_group))+

@@ -22,6 +22,7 @@ set_top_cut_hfr = 700 #the final group for heifer days of age with be this numbe
 #the more time periods you add to this list the longer it will take to process files
 denominator_time_periods<-c(21, 365) #do NOT delete the yearly option or you will break the data_dictionary
 
+
 # PROCESS FILES--------------------------
 ## read in functions -------------------
 source('functions/fxn_pacman.R')
