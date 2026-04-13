@@ -46,9 +46,9 @@ Save the resulting csv file in the folder named **event_files***
         #32 #38 #40 #43
         
 NEXT - if you want to pull heifer data, pull the data and save in
-the **event_files_heifer** folder
+the **event_files** folder (you can have both heifers and cows in your event_files)
 
-    -   Option 3 pull heifer data: EVENTS\\2S2000CHNY #1 #2 #4 #5
+    -   Pull heifer data: EVENTS\\2S2000CHNY #1 #2 #4 #5
         #6 #11 #12 #13 #15 #28 #29 #30 #31 #32 #38 #40 #43
         
 
