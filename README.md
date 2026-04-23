@@ -57,7 +57,7 @@ the **milk_files*** folder
 
     -   EVENTS #1 #11 #29 #6 #13\\4S2000H
 
-NEXT - Open the file names "step0_MasterProcessing.R" in Rstudio. Check
+NEXT - Open the file names "STEP0_MASTER_PROCESSING.R" in Rstudio. Check
 to make sure
 
 -   that all farm specific options are set up correctly.
@@ -67,7 +67,7 @@ to make sure
 -   Set heifer import function to TRUE if pulled heifer data
 
 
-LAST - Run step0_MasterProcessing.R
+LAST - Run STEP0_MASTER_PROCESSING.R
 
 FINALLY - Use the files in intermediate files to create reports.  
 You can view example reports in the reports folder
@@ -77,6 +77,8 @@ You can view example reports in the reports folder
 -   animal_lactations.parquet - each row is a unique animal lactation
 
 -   events.parquet - each row is an event (animal, date, event, descriptive variables)
+
+-   herd_denominators - each row is a count of animals per time period
 
 -   explore_lame.html as an example report.
 
