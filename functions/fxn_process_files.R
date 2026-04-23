@@ -29,7 +29,7 @@ print('milk data processed if turned on')
 
 ## process event data -----------------
 if (get_EXAMPLE_data_from_google_drive == TRUE) {
-  source("step00_get_example_data_from_google_drive.R")
+  source("functions/step00_get_example_data_from_google_drive.R")
 }
 
 print('begining to process data')
