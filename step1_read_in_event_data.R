@@ -53,6 +53,14 @@ if ("SourceFarm" %in% names(events)) {
   print('No SourceFarm Info')
 }
 
+#add EID variable
+if ("EID" %in% names(events)) {
+  print('EID already exists')
+} else {
+  events$EID = "No EID Info"
+  print('No EID Info')
+}
+
 #add herd id to example data
 if ("HERDID" %in% names(events)) {
   print('HERDID already exists')
