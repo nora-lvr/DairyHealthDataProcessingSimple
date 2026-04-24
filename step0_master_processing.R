@@ -3,7 +3,7 @@
 
 clean_up_old_files<-TRUE #this will delete any previously processed files as well as raw data in the event_files folder
 
-get_EXAMPLE_herds <- 1 #(0-8)
+get_EXAMPLE_herds <- 2 #(0-8)
 #number of Parnell Example herds you want to process.
 #if this is set to 0, you need to put your own data in the event_files folder
 #make sure "clean_up_old_files is set to FALSE if you are using your own data
@@ -52,7 +52,7 @@ fxn_pacman_all()
 
 ## Gerard's lameness report ---------------------------
 quarto::quarto_render("step3_create_denominators_lact_dim_season.qmd") # denominators for lameness report
-quarto::quarto_render("report_explore_lame.qmd")
+#quarto::quarto_render("report_explore_lame.qmd")
 
 ## "HOW TO" reports ---------------------------
 quarto::quarto_render("report_how_to_use_denominators.qmd")
