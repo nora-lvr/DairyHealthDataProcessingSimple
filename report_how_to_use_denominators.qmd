@@ -148,7 +148,7 @@ pneu_events<-events_formatted%>%filter(event %in% 'PNEU')
 ggplot(pneu_events)+
   geom_histogram(aes(x = dim_event, color = lact_group_basic))+
   geom_vline(xintercept = 150)+
-  geom_text(aes(x = 150, y = Inf, label = '150 dim'), hjust = 1, vjust = 1)+
+  geom_text(aes(x = 150, y = Inf, label = '150 dop'), hjust = 1, vjust = 1)+
   facet_wrap(location_event~lact_group_basic, scale = 'free_y')+
   coord_cartesian(xlim = c(0, NA))
 

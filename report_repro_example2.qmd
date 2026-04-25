@@ -115,6 +115,9 @@ arrange(herdid, id_animal_lact, date_event)%>%
 
 The timing of all subsequent bred events relies on the first bred event to occur.
 This graphic displays variation in this value across lactation groups.
+```{r}
+
+```
 
 ```{r}
 #endpoints------------------
