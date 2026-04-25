@@ -1,9 +1,10 @@
 # SETUP-----------------------------
 #**** Modify This Section***
 
+## processing options -------------------------------
 clean_up_old_files<-TRUE #this will delete any previously processed files as well as raw data in the event_files folder
 
-get_EXAMPLE_herds <- 2 #(0-8)
+get_EXAMPLE_herds <- 1 #(0-8)
 #number of Parnell Example herds you want to process.
 #if this is set to 0, you need to put your own data in the event_files folder
 #make sure "clean_up_old_files is set to FALSE if you are using your own data
@@ -23,6 +24,7 @@ set_top_cut_hfr = 700 #the final group for heifer days of age with be this numbe
 #The standard options are 21 and 365.  However any number works.
 #You can add or delete as you wish, except for yearly. Yearly needs to stay
 #the more time periods you add to this list the longer it will take to process files
+#if you want calendar denominators (monthly, quarterly, etc) those already exist, don't add them here.
 denominator_time_periods<-c(#21, 
                             365) #do NOT delete the yearly option or you will break the data_dictionary
 
@@ -33,26 +35,23 @@ denominator_time_periods<-c(#21,
 source('functions/fxn_pacman.R')
 source("functions/fxn_delete_files.R")
 
-#******************************************************************************
-#*******************************************************************************
 #CLEAN SLATE --------------
 if (clean_up_old_files==TRUE){
 fxn_delete_files_clean_slate() #delete ALL original event data and  processed data
 }
-#****************************************************************************
-#***************************************************************************
 
 ## process files ----------
 source('functions/fxn_process_files.R')
 
 
 # REPORTS ----------------
+# choose which reports to turn on by commenting/uncommenting them
 source('functions/fxn_pacman.R')
 fxn_pacman_all()
 
 ## Gerard's lameness report ---------------------------
 quarto::quarto_render("step3_create_denominators_lact_dim_season.qmd") # denominators for lameness report
-#quarto::quarto_render("report_explore_lame.qmd")
+quarto::quarto_render("report_explore_lame.qmd")
 
 ## "HOW TO" reports ---------------------------
 quarto::quarto_render("report_how_to_use_denominators.qmd")
@@ -60,6 +59,8 @@ quarto::quarto_render("report_how_to_use_denominators.qmd")
 ## quick check data reports--------------------------------
 quarto::quarto_render("report_explore_event_types.qmd")
 quarto::quarto_render("report_data_dictionary.qmd")
+
+
 
 
 
