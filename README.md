@@ -35,7 +35,7 @@ out what we don't need later
     "Remark" "R" "T" "B" "Protocols" "Technician"
 
 FIRST - Pull events from dairy comp using one option from the code below. 
-Save the resulting csv file in the folder named **event_files***
+Save the resulting csv file in the folder named **event_files**
 
     -   Option 1 Pull 5 years in one file: EVENTS\\2S2000CHN #1 #2 #4 #5
         #6 #11 #12 #13 #15 #28 #29 #30 #31 #32 #38 #40 #43
