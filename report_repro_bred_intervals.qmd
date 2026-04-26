@@ -291,7 +291,7 @@ ggplot(bred1_set_days_back%>%filter(!(lact_group_repro%in% 'Heifer')))+
 # 
 #   geom_point(data = bred1_summary, 
 #              aes(x = q1, y = lact_group_repro))+
-  facet_grid(herdid~lact_group_repro, scale = 'free')+
+  facet_grid(herdid~lact_group_repro, scales = 'free')+
   #coord_cartesian(xlim = c(40, 120))+
   theme_bw()+
   theme(legend.position = 'none')
