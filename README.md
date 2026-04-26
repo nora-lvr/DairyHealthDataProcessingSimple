@@ -53,7 +53,7 @@ the **event_files** folder (you can have both heifers and cows in your event_fil
         
 
 NEXT - if you want to look at production data, pull the data and save in
-the **milk_files*** folder
+the **milk_files** folder
 
     -   EVENTS #1 #11 #29 #6 #13\\4S2000H
 
